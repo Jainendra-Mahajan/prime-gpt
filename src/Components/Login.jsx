@@ -3,13 +3,14 @@ import Header from './Header'
 import { LOGIN_BACKGROUND } from '../utils/Constants'
 import { validate } from '../utils/validate'
 import { auth } from '../utils/firebase'
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth'
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from 'firebase/auth'
 import { useNavigate } from 'react-router-dom'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { addUser } from '../utils/userSlice'
 
 const Login = () => {
 
-    const userInfo = useSelector((store) => store.User);
+    const dispatch = useDispatch();
     // console.log(userInfo);
 
     const [isSignIn, setIsSignIn] = useState(true)
@@ -39,7 +40,16 @@ const Login = () => {
                 .then((userCredential) => {
                     // Signed up 
                     const user = userCredential.user;
-                    navigate("/browse")
+                    updateProfile(user, {
+                        displayName: nameRef.current.value
+                    }).then(() => {
+                        const { uid, email, displayName } = auth.currentUser;
+                        dispatch(addUser({ uid: uid, email: email, displayName: displayName, }));
+                        navigate("/browse")
+                    }).catch((error) => {
+                        setValidateMessage(error.message)
+                    });
+
                 })
                 .catch((error) => {
                     const errorCode = error.code;
@@ -49,7 +59,6 @@ const Login = () => {
                 });
 
         }
-
         else {
             signInWithEmailAndPassword(auth, emailRef.current.value, passwordRef.current.value)
                 .then((userCredential) => {
