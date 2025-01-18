@@ -1,21 +1,16 @@
 import React, { useRef, useState } from 'react'
 import Header from './Header'
-import { LOGIN_BACKGROUND } from '../utils/Constants'
+import { LOGIN_BACKGROUND } from '../utils/constants'
 import { validate } from '../utils/validate'
 import { auth } from '../utils/firebase'
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from 'firebase/auth'
-import { useNavigate } from 'react-router-dom'
-import { useDispatch, useSelector } from 'react-redux'
 import { addUser } from '../utils/userSlice'
 
 const Login = () => {
-
-    const dispatch = useDispatch();
     // console.log(userInfo);
 
     const [isSignIn, setIsSignIn] = useState(true)
     const [validateMessage, setValidateMessage] = useState(null);
-    const navigate = useNavigate();
 
     const emailRef = useRef(null);
     const nameRef = useRef(null);
@@ -45,7 +40,6 @@ const Login = () => {
                     }).then(() => {
                         const { uid, email, displayName } = auth.currentUser;
                         dispatch(addUser({ uid: uid, email: email, displayName: displayName, }));
-                        navigate("/browse")
                     }).catch((error) => {
                         setValidateMessage(error.message)
                     });
@@ -54,7 +48,6 @@ const Login = () => {
                 .catch((error) => {
                     const errorCode = error.code;
                     const errorMessage = error.message;
-                    // ..
                     setValidateMessage(errorCode + " " + errorMessage)
                 });
 
@@ -64,7 +57,6 @@ const Login = () => {
                 .then((userCredential) => {
                     // Signed in 
                     const user = userCredential.user;
-                    navigate("/browse")
                 })
                 .catch((error) => {
                     const errorCode = error.code;
@@ -74,7 +66,6 @@ const Login = () => {
         }
     }
     return (
-        // 
         <div className='bg-black'>
             <Header />
             <div>
