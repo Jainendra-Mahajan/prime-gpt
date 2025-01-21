@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { API_OPTIONS, MOVIE_TITLE_LOGO_API } from '../utils/constants'
 import useGetMovieLogo from '../hooks/useGetMovieLogo';
 
@@ -7,9 +7,9 @@ const VideoInformation = ({ id, overview }) => {
     const movieLogo = useGetMovieLogo(id);
 
     return (
-        <div className='px-10 w-screen aspect-video mt-24 absolute bg-gradient-to-r from-black text-white'>
-            <img src={MOVIE_TITLE_LOGO_API + movieLogo} className='w-96 m-5 p-5 mt-24' />
-            <p className='w-[28%] ml-6 mt-1 pl-5 pt-0 text-xl'>{overview.slice(0, 100) + "..."}</p>
+        <div className='ml-[9rem] absolute text-white bg-gradient-to-r from-black h-[59vh]'>
+            <img src={MOVIE_TITLE_LOGO_API + movieLogo} className='w-72 m-5 p-5 mt-[3rem]' />
+            <p className='w-[40%] ml-6 mt-1 pl-5 pt-0 text-xl'>{overview.slice(0, 100) + "..."}</p>
 
             <div className='flex ml-5 p-5'>
                 <button className='text-white rounded-lg mr-5 p-1 w-36 text-2xl bg-customDark flex justify-center hover:bg-white hover:text-black' >

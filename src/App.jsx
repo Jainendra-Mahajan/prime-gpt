@@ -4,7 +4,7 @@ import { Provider } from "react-redux"
 
 function App() {
   return (
-    <div className="bg-[#03152c]">
+    <div>
       <Provider store={appStore}>
         <Body />
       </Provider>

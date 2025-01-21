@@ -12,3 +12,4 @@ export const API_OPTIONS = {
 export const NOW_PLAYING_MOVIES_API = "https://api.themoviedb.org/3/movie/now_playing?page=1"
 export const MOVIE_LOGO_IMAGE_API = "https://api.themoviedb.org/3/movie/"
 export const MOVIE_TITLE_LOGO_API = "https://image.tmdb.org/t/p/original/"
+export const MOVIE_POSTER_500_PX_API = "https://image.tmdb.org/t/p/w500/"

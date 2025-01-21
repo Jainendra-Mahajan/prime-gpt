@@ -5,17 +5,15 @@ import VideoInformation from './VideoInformation'
 
 const MainContainer = () => {
 
-
     const movies = useSelector(store => store?.movies?.nowPlayingMovies)
-
     if (!movies) return;
 
-    const { id, original_title, overview } = movies[3];
+    const { id, original_title, overview } = movies[1];
     return (
         <div>
+
             <VideoInformation id={id} title={original_title} overview={overview} />
             <VideoBackground movieId={id} />
-
         </div>
     )
 }

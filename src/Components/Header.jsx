@@ -35,7 +35,7 @@ const Header = () => {
         return () => unsubscribe();
     }, [])
     return (
-        <div className='w-full px-44 absolute flex justify-between text-white bg-gradient-to-r from-black bg-[#03152c]'>
+        <div className='w-full px-44 flex justify-between text-white  bg-[#03152c]'>
             <img src={HEADER_LOGO} alt="Logo" className='w-36' />
 
             {user && <div className='flex justify-between '>
