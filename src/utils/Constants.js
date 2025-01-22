@@ -13,3 +13,10 @@ export const NOW_PLAYING_MOVIES_API = "https://api.themoviedb.org/3/movie/now_pl
 export const MOVIE_LOGO_IMAGE_API = "https://api.themoviedb.org/3/movie/"
 export const MOVIE_TITLE_LOGO_API = "https://image.tmdb.org/t/p/original/"
 export const MOVIE_POSTER_500_PX_API = "https://image.tmdb.org/t/p/w500/"
+export const GPT_BACKGROUND = "https://prime-gpt.web.app/assets/GPT-banner-Cvc3zqun.png"
+
+export const SUPPORTED_LANGUAGE = [
+    { identifier: "english", language: "English" },
+    { identifier: "hindi", language: "Hindi" },
+    { identifier: "marathi", language: "Marathi" }
+]
