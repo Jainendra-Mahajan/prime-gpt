@@ -20,3 +20,4 @@ export const SUPPORTED_LANGUAGE = [
     { identifier: "hindi", language: "Hindi" },
     { identifier: "marathi", language: "Marathi" }
 ]
+
