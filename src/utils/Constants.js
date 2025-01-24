@@ -5,7 +5,7 @@ export const API_OPTIONS = {
     method: 'GET',
     headers: {
         accept: 'application/json',
-        Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlN2E2MTczOWE3NTBjNjA0YjhjN2I3ODYxYjAwMzY2ZSIsIm5iZiI6MTcwMjc5ODAyMy45ODMsInN1YiI6IjY1N2VhMmM3MTI0YzhkMDc0OTM5MWU0YyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.m3PRF_SM8HyYcMJZZSbVADp3DykzVvo4HIJfsQbqPrQ'
+        Authorization: 'Bearer ' + import.meta.env.VITE_TMDB_API_KEY
     }
 };
 
@@ -16,7 +16,7 @@ export const MOVIE_POSTER_500_PX_API = "https://image.tmdb.org/t/p/w500/"
 export const GPT_BACKGROUND = "https://prime-gpt.web.app/assets/GPT-banner-Cvc3zqun.png"
 
 export const SUPPORTED_LANGUAGE = [
-    { identifier: "english", language: "English" },
+    { identifier: "en", language: "English" },
     { identifier: "hindi", language: "Hindi" },
     { identifier: "marathi", language: "Marathi" }
 ]

@@ -49,20 +49,31 @@ const Header = () => {
         return () => unsubscribe();
     }, [])
     return (
-        <div className='sticky top-0 z-50 w-full px-44 flex justify-between text-white bg-[#03152c]'>
-            <button className='m-2 py-2 px-3 bg-[#03152c] text-white rounded-lg' onClick={handleGptSearch}>
-                {!gptValue ? "GPT Search" : "Homepage"}
-            </button>
-            <img src={HEADER_LOGO} alt="Logo" className='w-36' />
+        <div className='sticky top-0 z-50 w-full px-0 md:px-44 flex justify-between text-white bg-[#03152c]'>
+
+            <img src={HEADER_LOGO} alt="Logo" className='w-24 md:w-36' />
 
             {user && <div className='flex justify-between '>
-                <select className='bg-[#03152c] text-white' onChange={handleLanguageChange}>
+                <button className='m-2 py-2 px-3 bg-[#03152c] text-white rounded-lg text-sm md:text-base' onClick={handleGptSearch}>
+                    {!gptValue ?
+                        <svg class="w-6 h-6 md:w-7 md:h-7 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z" />
+                        </svg>
+                        :
+                        <svg class="w-6 h-6 md:w-7 md:h-7 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m4 12 8-8 8 8M6 10.5V19a1 1 0 0 0 1 1h3v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h3a1 1 0 0 0 1-1v-8.5" />
+                        </svg>
+                    }
+                </button>
+                <select className='text-sm md:text-base bg-[#03152c] text-white' onChange={handleLanguageChange}>
                     {SUPPORTED_LANGUAGE.map(lang => <option key={lang.identifier} value={lang.identifier} > {lang.language}</option>)}
                 </select>
-                <img src={USER_LOGO} alt="user_logo"
-                    className='w-14 m-2  p-2' />
-                <button className='m-2 pr-2' onClick={handleSignOut}>Sign Out </button>
 
+                <div className='flex'>
+                    <img src={USER_LOGO} alt="user_logo"
+                        className='w-10 md:w-14 m-2 p-2 mr-0' />
+                    <button className='pr-2 text-sm md:text-base' onClick={handleSignOut}>Sign Out </button>
+                </div>
 
             </div>}
         </div>

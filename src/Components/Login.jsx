@@ -69,11 +69,11 @@ const Login = () => {
         <div className='bg-black'>
             <Header />
             <div>
-                <img src={LOGIN_BACKGROUND} alt="Login Background" className='w-full absolute' />
+                <img src={LOGIN_BACKGROUND} alt="Login Background" className='h-screen w-full absolute object-cover' />
             </div>
 
             <form onSubmit={(e) => { e.preventDefault() }}
-                className='text-white pt-5 my-40 w-3/12 mx-auto right-24 absolute bg-black flex flex-col opacity-90 rounded-lg'>
+                className='text-white pt-5 my-40 w-9/12 md:w-3/12 mx-14 md:mx-auto md:right-24 absolute bg-[#03152c] flex flex-col opacity-90 rounded-lg '>
                 <h1 className='text-center font-bold text-xl'>{isSignIn ? "Sign In" : "Sign Up"}</h1>
 
                 <input type="text" placeholder='Email Address' ref={emailRef}
@@ -90,7 +90,7 @@ const Login = () => {
 
                 {validateMessage !== null && <p className='ml-3 p-2 text-red-600 font-bold'>{validateMessage}</p>}
 
-                <p className='p-1 ml-4 mb-10'>
+                <p className='px-5 pb-10 md:p-10 mb-10 text-sm md:text-base'>
                     {isSignIn && <span>Not a Prime Member? </span>}
                     {isSignIn && <span onClick={toggleSignInForm} className='hover:text-[#1399FF] cursor-pointer'>Join Prime Now</span>}
 
