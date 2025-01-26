@@ -9,7 +9,7 @@ export const API_OPTIONS = {
     }
 };
 
-export const NOW_PLAYING_MOVIES_API = "https://api.themoviedb.org/3/movie/now_playing?page=1"
+export const NOW_PLAYING_MOVIES_API = "https://api.themoviedb.org/3/discover/movie?include_video=true&language=IN-hi&page=1&region=IN&release_date.gte=2017-08-01&sort_by=popularity.desc&with_original_language=hi"
 export const MOVIE_LOGO_IMAGE_API = "https://api.themoviedb.org/3/movie/"
 export const MOVIE_TITLE_LOGO_API = "https://image.tmdb.org/t/p/original/"
 export const MOVIE_POSTER_500_PX_API = "https://image.tmdb.org/t/p/w500/"

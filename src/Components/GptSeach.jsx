@@ -5,7 +5,7 @@ import GptSuggestions from './GptSuggestions';
 
 const GptSeach = () => {
     return (
-        <div className="relative w-full h-screen">
+        <div className="absolute w-full h-screen">
             <div
                 className="fixed inset-0 -z-10 bg-cover bg-center"
                 style={{

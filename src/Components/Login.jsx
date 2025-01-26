@@ -7,7 +7,6 @@ import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfi
 import { addUser } from '../utils/userSlice'
 
 const Login = () => {
-    // console.log(userInfo);
 
     const [isSignIn, setIsSignIn] = useState(true)
     const [validateMessage, setValidateMessage] = useState(null);
