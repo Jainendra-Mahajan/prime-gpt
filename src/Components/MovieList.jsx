@@ -2,7 +2,6 @@ import React, { useRef } from 'react';
 import MoviePosterCard from './MoviePosterCard';
 
 const MovieList = ({ title, movies }) => {
-    // const navigate = useNavigate();
     const carouselRef = useRef(null);
 
     const scrollLeft = () => {
@@ -17,9 +16,6 @@ const MovieList = ({ title, movies }) => {
         }
     };
 
-    // const handleMovieClick = (id) => {
-    //     navigate("/play/" + id)
-    // }
 
     return (
         <div className="relative mx-5 md:mx-10">
@@ -32,7 +28,6 @@ const MovieList = ({ title, movies }) => {
                 &#8249;
             </button>
 
-            {/* Right Button */}
             <button
                 onClick={scrollRight}
                 className="absolute right-5 top-1/2 -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full z-20 hover:bg-gray-700"
@@ -40,14 +35,13 @@ const MovieList = ({ title, movies }) => {
                 &#8250;
             </button>
 
-            {/* Carousel Container */}
             <div
                 ref={carouselRef}
                 className="flex overflow-x-scroll space-x-5 scrollbar-hide"
             >
                 {movies.map((movie) => (
                     <div key={movie.id} className="flex-shrink-0 cursor-pointer ">
-                        <MoviePosterCard posterId={movie?.poster_path} id={movie?.id} />
+                        <MoviePosterCard posterId={movie?.poster_path} id={movie?.id} title={movie?.title} overview={movie.overview} />
                     </div>
                 ))}
             </div>

@@ -8,8 +8,8 @@ function App() {
     <div className="bg-slate-950">
       <Provider store={appStore}>
         <Body />
-        <Footer />
       </Provider>
+
     </div>
   )
 }
