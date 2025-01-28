@@ -43,7 +43,6 @@ const Header = () => {
 
             } else {
                 dispatch(removeUser());
-                navigate("/")
             }
         });
 

@@ -21,3 +21,21 @@ export const SUPPORTED_LANGUAGE = [
     { identifier: "marathi", language: "Marathi" }
 ]
 
+export const LANDING_PAGE_IMAGE_1 = "https://raw.githubusercontent.com/rishav-learnerml/prime-gpt/refs/heads/master/src/assets/banner-1.jpeg"
+export const LANDING_PAGE_IMAGE_2 = "https://raw.githubusercontent.com/rishav-learnerml/prime-gpt/refs/heads/master/src/assets/banner-2.jpeg"
+export const LANDING_PAGE_IMAGE_3 = "https://raw.githubusercontent.com/rishav-learnerml/prime-gpt/refs/heads/master/src/assets/firestick-bg.jpeg"
+
+export const BANNER_VALUE = [
+    {
+        imgId: "https://raw.githubusercontent.com/rishav-learnerml/prime-gpt/refs/heads/master/src/assets/banner-1.jpeg",
+        title: "Welcome to Prime Video",
+        description: "Watch the latest movies, TV shows, and award-winning Amazon Originals",
+        buttonValue: "Sign in to join Prime"
+    },
+    {
+        imgId: "https://raw.githubusercontent.com/rishav-learnerml/prime-gpt/refs/heads/master/src/assets/banner-2.jpeg",
+        title: "Movie rentals on Prime Video",
+        description: "Early Access to new movies, before digital subscription",
+        buttonValue: "Rent Now"
+    }
+]

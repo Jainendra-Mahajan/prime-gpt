@@ -5,12 +5,13 @@ import { RouterProvider, createBrowserRouter } from 'react-router'
 import { useDispatch } from 'react-redux'
 import Trailer from './Trailer'
 import GptSeach from './GptSeach'
+import LandingPage from './LandingPage'
 
 const Body = () => {
     const dispatch = useDispatch();
     const appRouter = createBrowserRouter([
         {
-            path: "/",
+            path: "/login",
             element: <Login />
         },
         {
@@ -25,7 +26,11 @@ const Body = () => {
         {
             path: "/play/:id",
             element: <Trailer />
-        }
+        },
+        {
+            path: "/",
+            element: <LandingPage />
+        },
     ])
 
     return (
