@@ -22,7 +22,7 @@ const MoviePosterCard = ({ posterId, id, title, overview }) => {
 
     return (
         <div
-            className="w-36 md:w-44 relative cursor-pointer"
+            className="w-36 md:w-52 relative cursor-pointer"
             onClick={handleMovieClick}
             onMouseEnter={handleCardHover}
             onMouseLeave={handleCardLeave}
@@ -30,10 +30,10 @@ const MoviePosterCard = ({ posterId, id, title, overview }) => {
             <img
                 src={MOVIE_POSTER_500_PX_API + posterId}
                 alt="Movie Poster"
-                className="h-64 rounded-lg transition-transform duration-300 transform group-hover:scale-105"
+                className="h-72 rounded-lg transition-transform duration-300 transform group-hover:scale-105"
             />
             <div
-                className={`h-full absolute top-0 bg-black bg-opacity-80 text-white rounded-lg flex flex-col transition-opacity duration-300 px-1
+                className={`h-full absolute top-0 px-5 bg-black bg-opacity-80 text-white rounded-lg flex flex-col transition-opacity duration-300
                 ${showCard ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
             >
                 <h1 className="flex justify-center items-center text-center text-xs md:text-base mb-2 font-semibold mt-2">

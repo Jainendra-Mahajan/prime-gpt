@@ -57,13 +57,13 @@ const Header = () => {
             {user && <div className='flex justify-between '>
                 <button className='m-2 py-2 px-3 bg-slate-950 text-white rounded-lg text-sm md:text-base' onClick={handleGptSearch}>
                     {!gptValue ?
-                        <svg className="w-6 h-6 md:w-7 md:h-7 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                        <Link to="/search"><svg className="w-6 h-6 md:w-7 md:h-7 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                             <path stroke="currentColor" strokeLinecap="round" strokeWidth="2" d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z" />
-                        </svg>
+                        </svg></Link>
                         :
-                        <svg className="w-6 h-6 md:w-7 md:h-7 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                        <Link to="/"><svg className="w-6 h-6 md:w-7 md:h-7 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                             <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m4 12 8-8 8 8M6 10.5V19a1 1 0 0 0 1 1h3v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h3a1 1 0 0 0 1-1v-8.5" />
-                        </svg>
+                        </svg></Link>
                     }
                 </button>
                 {gptValue && <select className='text-sm md:text-base bg-slate-950 text-white' onChange={handleLanguageChange}>

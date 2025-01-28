@@ -4,6 +4,7 @@ import Browse from './Browse'
 import { RouterProvider, createBrowserRouter } from 'react-router'
 import { useDispatch } from 'react-redux'
 import Trailer from './Trailer'
+import GptSeach from './GptSeach'
 
 const Body = () => {
     const dispatch = useDispatch();
@@ -16,6 +17,11 @@ const Body = () => {
             path: "/browse",
             element: <Browse />
         },
+        {
+            path: "/search",
+            element: <GptSeach />
+        },
+
         {
             path: "/play/:id",
             element: <Trailer />
