@@ -22,7 +22,7 @@ const MoviePosterCard = ({ posterId, id, title, overview }) => {
 
     return (
         <div
-            className="w-36 md:w-52 relative cursor-pointer"
+            className="relative cursor-pointer"
             onClick={handleMovieClick}
             onMouseEnter={handleCardHover}
             onMouseLeave={handleCardLeave}
@@ -30,13 +30,13 @@ const MoviePosterCard = ({ posterId, id, title, overview }) => {
             <img
                 src={MOVIE_POSTER_500_PX_API + posterId}
                 alt="Movie Poster"
-                className="h-72 rounded-lg transition-transform duration-300 transform group-hover:scale-105"
+                className="h-64 md:h-72 rounded-lg transition-transform duration-300 transform group-hover:scale-105"
             />
             <div
-                className={`h-full absolute top-0 px-5 bg-black bg-opacity-80 text-white rounded-lg flex flex-col transition-opacity duration-300
-                ${showCard ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+                className={`h-full absolute top-0 pl-1 pr-2 bg-black bg-opacity-80 text-white rounded-lg flex flex-col transition-opacity duration-300
+                ${showCard ? 'opacity-100' : 'opacity-0 pointer-events-none'} overflow-y-hidden`}
             >
-                <h1 className="flex justify-center items-center text-center text-xs md:text-base mb-2 font-semibold mt-2">
+                <h1 className="flex items-start text-center text-base mb-2 font-semibold mt-2">
                     <svg
                         className="w-6 h-6 md:w-6 md:h-6 dark:text-white"
                         aria-hidden="true"
@@ -55,13 +55,13 @@ const MoviePosterCard = ({ posterId, id, title, overview }) => {
                     {title}
                 </h1>
 
-                <button className="mx-2 py-1 md:py-2 mb-2 md:m-2 text-xs md:text-base bg-white text-black rounded-lg w-3/4 hover:bg-gray-200 transition-colors duration-200 flex justify-center items-center">
+                <button className="mx-0 md:mx-2 py-2 md:py-2 mb-2 md:m-2 md:text-base bg-white text-black text-lg rounded-lg md:w-3/4 hover:bg-gray-200 transition-colors duration-200 flex justify-center">
                     <svg
-                        className="w-6 h-6 md:w-6 md:h-6 dark:text-black"
+                        className="md:w-6 md:h-6 dark:text-black"
                         aria-hidden="true"
                         xmlns="http://www.w3.org/2000/svg"
-                        width="8"
-                        height="8"
+                        width="24"
+                        height="24"
                         fill="currentColor"
                         viewBox="0 0 24 24"
                     >
@@ -73,7 +73,7 @@ const MoviePosterCard = ({ posterId, id, title, overview }) => {
                     </svg>
                     Play
                 </button>
-                <p className="text-xs md:text-sm mx-1 mt-1">{overview.slice(0, 150) + '...'}</p>
+                <p className="text-xs md:text-sm md:mx-1 mt-2">{overview.slice(0, 150) + '...'}</p>
             </div>
         </div>
     );

@@ -19,7 +19,6 @@ const GptSearchBar = () => {
     }
 
     const handleGptSearch = async () => {
-        console.log(search.current.value);
 
         const gptQuery = "Act as a Movie Recommendation system and suggest some movies for the query : " +
             search.current.value + ". only give me names of 5 movies, comma seperated like the example result given ahead. Example Result: Gadar, Sholay, Don, Golmaal, Koi Mil Gaya";
@@ -41,7 +40,6 @@ const GptSearchBar = () => {
                 MovieNames: movieList, MovieSuggestion: moviesSuggestionsArray
             }
         ))
-        console.log(moviesSuggestionsArray);
     }
 
     const languageKey = useSelector(store => store.config.lang);

@@ -6,19 +6,17 @@ import Header from './Header';
 
 const GptSeach = () => {
     return (
-        <>
+        <div className="absolute w-full h-screen">
+            <div
+                className="fixed inset-0 -z-10 bg-cover bg-center"
+                style={{
+                    backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3)), url(${GPT_BACKGROUND})`,
+                }}
+            ></div>
             <Header />
-            <div className="absolute w-full h-screen">
-                <div
-                    className="fixed inset-0 -z-10 bg-cover bg-center"
-                    style={{
-                        backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3)), url(${GPT_BACKGROUND})`,
-                    }}
-                ></div>
-                <GptSearchBar />
-                <GptSuggestions />
-            </div>
-        </>
+            <GptSearchBar />
+            <GptSuggestions />
+        </div>
     );
 };
 

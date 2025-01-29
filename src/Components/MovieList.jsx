@@ -23,14 +23,14 @@ const MovieList = ({ title, movies }) => {
 
             <button
                 onClick={scrollLeft}
-                className="absolute left-5 top-1/2 -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full z-20 hover:bg-gray-700"
+                className="hidden md:inline-block absolute left-5 top-1/2 -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full z-20 hover:bg-gray-700"
             >
                 &#8249;
             </button>
 
             <button
                 onClick={scrollRight}
-                className="absolute right-5 top-1/2 -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full z-20 hover:bg-gray-700"
+                className="hidden md:inline-blockabsolute right-5 top-1/2 -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full z-20 hover:bg-gray-700"
             >
                 &#8250;
             </button>

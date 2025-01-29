@@ -5,7 +5,9 @@ import { Provider } from "react-redux"
 function App() {
   return (
     <div className="bg-slate-950">
+
       <Provider store={appStore}>
+
         <Body />
       </Provider>
 

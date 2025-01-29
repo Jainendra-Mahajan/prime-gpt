@@ -22,13 +22,10 @@ const Browse = () => {
     return (
         <div>
             <Header />
-            {gptValue ? <GptSeach /> : (
-                <>
-                    <MainContainer />
-                    <SecondaryContainer />
-                    <Footer />
-                </>
-            )}
+            <MainContainer />
+            <SecondaryContainer />
+            <Footer />
+
         </div >
     )
 }

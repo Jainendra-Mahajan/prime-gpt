@@ -11,6 +11,10 @@ const Body = () => {
     const dispatch = useDispatch();
     const appRouter = createBrowserRouter([
         {
+            path: "/",
+            element: <LandingPage />
+        },
+        {
             path: "/login",
             element: <Login />
         },
@@ -27,10 +31,7 @@ const Body = () => {
             path: "/play/:id",
             element: <Trailer />
         },
-        {
-            path: "/",
-            element: <LandingPage />
-        },
+
     ])
 
     return (

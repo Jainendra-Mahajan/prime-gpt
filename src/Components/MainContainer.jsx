@@ -2,13 +2,14 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import VideoBackground from './VideoBackground'
 import VideoInformation from './VideoInformation'
-
+import Shimmer from './Shimmer'
 
 const MainContainer = () => {
 
     const movies = useSelector(store => store?.movies?.nowPlayingMovies)
     const trailerIndex = useSelector(store => store?.movies?.trailerIndex)
-    if (!movies) return;
+    if (!movies) return <Shimmer />
+
 
     const { id, original_title, overview } = movies[trailerIndex];
     return (
