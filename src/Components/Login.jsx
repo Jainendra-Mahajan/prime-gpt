@@ -76,11 +76,11 @@ const Login = () => {
                 <img src={LOGIN_BACKGROUND} alt="Login Background" className='h-screen w-full absolute object-cover' />
             </div>
 
-            <form onSubmit={(e) => { e.preventDefault() }}
+            <form data-testid="login-form" onSubmit={(e) => { e.preventDefault() }}
                 className='text-white pt-5 my-20 md:my-40 w-9/12 md:w-3/12 mx-14 md:mx-auto md:right-24 absolute bg-[#03152c] flex flex-col opacity-90 rounded-lg '>
                 <h1 className='text-center font-bold text-xl'>{isSignIn ? "Sign In" : "Sign Up"}</h1>
 
-                <input type="text" placeholder='Email Address' ref={emailRef}
+                <input type="text" data-testid="email-input" placeholder='Email Address' ref={emailRef}
                     className='m-4 p-2 rounded-md bg-gray-600' />
 
                 {!isSignIn && <input type="text" placeholder='Name' ref={nameRef}
