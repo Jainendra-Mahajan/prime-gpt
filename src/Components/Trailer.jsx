@@ -5,6 +5,7 @@ import useTrailerVideo from '../hooks/useTrailerVideo';
 import Header from './Header';
 import useRecommendedMovies from '../hooks/useRecommendedMovies';
 import MovieList from './MovieList';
+import Shimmer from './Shimmer'
 
 const Trailer = () => {
     const params = useParams();
@@ -14,6 +15,8 @@ const Trailer = () => {
 
     const movieTrailer = useSelector((store) => store?.movies?.movieTrailer);
     const recommendedMovies = useSelector((store) => store?.movies?.recommendedMovies);
+
+    if (!movieTrailer) return <Shimmer />
 
     return (
         <div className="text-white bg-slate-950 min-h-screen">
