@@ -1,13 +1,14 @@
-import React from 'react'
+import React, { Suspense, lazy } from 'react'
 import Login from './Login'
 import Browse from './Browse'
 import { RouterProvider, createBrowserRouter } from 'react-router'
 import { useDispatch } from 'react-redux'
 import Trailer from './Trailer'
-import GptSeach from './GptSeach'
 import LandingPage from './LandingPage'
 
+
 const Body = () => {
+    const GptSearch = lazy(() => import("./GptSearch"))
     const dispatch = useDispatch();
     const appRouter = createBrowserRouter([
         {
@@ -24,7 +25,10 @@ const Body = () => {
         },
         {
             path: "/search",
-            element: <GptSeach />
+            element:
+                <Suspense fallback={<div>Loading...</div>}>
+                    <GptSearch />
+                </Suspense>
         },
 
         {

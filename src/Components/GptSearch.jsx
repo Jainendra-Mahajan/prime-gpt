@@ -4,7 +4,7 @@ import GptSearchBar from './GptSearchBar';
 import GptSuggestions from './GptSuggestions';
 import Header from './Header';
 
-const GptSeach = () => {
+const GptSearch = () => {
     return (
         <div className="absolute w-full h-screen">
             <div
@@ -20,4 +20,4 @@ const GptSeach = () => {
     );
 };
 
-export default GptSeach;
+export default GptSearch;

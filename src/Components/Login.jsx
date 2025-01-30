@@ -19,6 +19,11 @@ const Login = () => {
         setIsSignIn(!isSignIn);
     }
 
+    const handleTestCredentials = () => {
+        emailRef.current.value = import.meta.env.VITE_EMAIL;
+        passwordRef.current.value = import.meta.env.VITE_PASSKEY;
+    }
+
     const handleSubmit = () => {
         let message = "";
         {
@@ -72,7 +77,7 @@ const Login = () => {
             </div>
 
             <form onSubmit={(e) => { e.preventDefault() }}
-                className='text-white pt-5 my-40 w-9/12 md:w-3/12 mx-14 md:mx-auto md:right-24 absolute bg-[#03152c] flex flex-col opacity-90 rounded-lg '>
+                className='text-white pt-5 my-20 md:my-40 w-9/12 md:w-3/12 mx-14 md:mx-auto md:right-24 absolute bg-[#03152c] flex flex-col opacity-90 rounded-lg '>
                 <h1 className='text-center font-bold text-xl'>{isSignIn ? "Sign In" : "Sign Up"}</h1>
 
                 <input type="text" placeholder='Email Address' ref={emailRef}
@@ -85,7 +90,10 @@ const Login = () => {
                     className='m-4 p-2 rounded-md bg-gray-600' />
 
                 <button className='bg-[#1399FF] text-white m-4 p-2 rounded-lg' onClick={handleSubmit}
-                >Sumbit</button>
+                >Login</button>
+
+                {isSignIn && <button className='bg-[#1399FF] text-white m-4 p-2 rounded-lg' onClick={handleTestCredentials}
+                >Login with Test Credentials</button>}
 
                 {validateMessage !== null && <p className='ml-3 p-2 text-red-600 font-bold'>{validateMessage}</p>}
 
@@ -96,6 +104,8 @@ const Login = () => {
                     {!isSignIn && <span>Already a user!</span>}
                     {!isSignIn && <span onClick={toggleSignInForm} className='hover:text-[#1399FF] cursor-pointer'> Sign In</span>}
                 </p>
+
+
 
             </form>
         </div >
