@@ -21,19 +21,19 @@ const MovieList = ({ title, movies }) => {
         <div className="relative mx-5 md:mx-10">
             <h1 className="py-5 text-lg md:text-2xl text-white">{title}</h1>
 
-            <button
+            {movies.length > 8 && <button
                 onClick={scrollLeft}
                 className="hidden md:inline-block absolute left-5 top-1/2 -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full z-20 hover:bg-gray-700"
             >
                 &#8249;
-            </button>
+            </button>}
 
-            <button
+            {movies.length > 8 && <button
                 onClick={scrollRight}
                 className="hidden md:inline-block absolute right-5 top-1/2 -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full z-20 hover:bg-gray-700"
             >
                 &#8250;
-            </button>
+            </button>}
 
             <div
                 ref={carouselRef}

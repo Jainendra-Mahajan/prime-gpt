@@ -1,11 +1,13 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import lang from '../utils/languageConstants';
 import openai from '../utils/openAI';
 import { API_OPTIONS } from '../utils/constants';
 import { addGptMovieResult } from '../utils/gptSlice';
+import GPTShimmer from './GPTShimmer';
 
 const GptSearchBar = () => {
+    const [loading, setLoading] = useState(false);
     const dispatch = useDispatch();
     const search = useRef(null);
 
@@ -19,7 +21,7 @@ const GptSearchBar = () => {
     }
 
     const handleGptSearch = async () => {
-
+        setLoading(true);
         const gptQuery = "Act as a Movie Recommendation system and suggest some movies for the query : " +
             search.current.value + ". only give me names of 5 movies, comma seperated like the example result given ahead. Example Result: Gadar, Sholay, Don, Golmaal, Koi Mil Gaya";
 
@@ -40,23 +42,29 @@ const GptSearchBar = () => {
                 MovieNames: movieList, MovieSuggestion: moviesSuggestionsArray
             }
         ))
+        setLoading(false);
     }
 
     const languageKey = useSelector(store => store.config.lang);
     return (
-        <div className='pt-[5%] flex justify-center text-base md:text-lg '>
-            <form className='w-[90%] md:w-[50%] grid grid-cols-12' onSubmit={(e) => e.preventDefault()} >
 
-                <input type="text" data-testid="search-bar" placeholder={lang[languageKey].placeHolder}
-                    className='text-white text-xs m-1 py-2 px-1 md:m-2 md:text-lg md:py-3 md:px-2 col-span-9 bg-gray-500 rounded-md'
-                    ref={search} />
+        <div>
+            <div className='pt-[5%] flex justify-center text-base md:text-lg '>
+                <form className='w-[90%] md:w-[50%] grid grid-cols-12' onSubmit={(e) => e.preventDefault()} >
 
-                <button className='ml-5 m-1 p-2 md:m-2 md:p-1 md:text-lg text-xs bg-blue-400 text-white col-span-3 rounded-md' onClick={handleGptSearch} >
-                    {lang[languageKey].search}
-                </button>
+                    <input type="text" data-testid="search-bar" placeholder={lang[languageKey].placeHolder}
+                        className='text-white text-xs m-1 py-2 px-1 md:m-2 md:text-lg md:py-3 md:px-2 col-span-9 bg-gray-500 rounded-md'
+                        ref={search} />
 
-            </form>
-        </div >
+                    <button className='ml-5 m-1 p-2 md:m-2 md:p-1 md:text-lg text-xs bg-blue-400 text-white col-span-3 rounded-md' onClick={handleGptSearch} >
+                        {lang[languageKey].search}
+                    </button>
+
+                </form>
+
+            </div >
+            {loading ? <GPTShimmer /> : null}
+        </div>
     )
 }
 

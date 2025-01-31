@@ -2,10 +2,10 @@ import React from "react";
 
 const Footer = () => {
     return (
-        <footer className="bg-slate-950 text-gray-300 py-8 cursor-pointer">
+        <footer className="bg-slate-950 text-gray-300 py-8 cursor-pointer mt-10">
             <div className="container mx-auto px-4 text-center">
                 <div className="space-y-4">
-                    <p className="text-sm">
+                    <p className="text-xs md:text-sm">
                         <span className="hover:underline">Terms and Privacy Notice</span>
                         <span className="mx-2">|</span>
                         <span className="hover:underline">Send us feedback</span>

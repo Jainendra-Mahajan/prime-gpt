@@ -1,11 +1,13 @@
 import React from 'react'
 import useTrailerVideo from '../hooks/useTrailerVideo'
 import { useSelector } from 'react-redux';
+import Shimmer from "./Shimmer"
 
 const VideoBackground = ({ movieId }) => {
 
     const movieTrailer = useSelector((store) => store?.movies?.movieTrailer)
     useTrailerVideo(movieId);
+
     return (
         <div data-testid="video-container" className='bg-slate-950 overflow-hidden flex justify-center items-center h-[20vh] md:h-[40vh]'>
             <iframe className="w-full aspect-video max-w-6xl bg-gradient-to-r from-white"
