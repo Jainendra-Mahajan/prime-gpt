@@ -24,6 +24,7 @@ export const SUPPORTED_LANGUAGE = [
 export const LANDING_PAGE_IMAGE_1 = "https://raw.githubusercontent.com/rishav-learnerml/prime-gpt/refs/heads/master/src/assets/banner-1.jpeg"
 export const LANDING_PAGE_IMAGE_2 = "https://raw.githubusercontent.com/rishav-learnerml/prime-gpt/refs/heads/master/src/assets/banner-2.jpeg"
 export const LANDING_PAGE_IMAGE_3 = "https://raw.githubusercontent.com/rishav-learnerml/prime-gpt/refs/heads/master/src/assets/firestick-bg.jpeg"
+export const SEARCH_SUGGESTION_API = "https://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q="
 
 export const BANNER_VALUE = [
     {

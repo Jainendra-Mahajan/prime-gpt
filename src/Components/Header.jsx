@@ -49,7 +49,7 @@ const Header = () => {
         return () => unsubscribe();
     }, [])
     return (
-        <div className='sticky top-0 z-50 w-full md:px-36 flex justify-between text-white bg-slate-950 items-center'>
+        <div className='fixed top-1 z-50 w-full md:px-36 flex justify-between text-white bg-slate-950 items-center'>
 
             <img src={HEADER_LOGO} alt="Logo" className='w-24 md:w-36' />
 

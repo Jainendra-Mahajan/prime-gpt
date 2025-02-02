@@ -49,7 +49,6 @@ it("Should Load the test credentials form input fields", async () => {
     fireEvent.click(testCredentialButton)
 
     const emailInput = await screen.findByTestId("email-input");
-    console.log(emailInput.value);
 
     expect(emailInput.value).toBe("prime@prime.com")
 })

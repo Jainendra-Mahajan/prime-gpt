@@ -15,7 +15,6 @@ const Trailer = () => {
     useRecommendedMovies(params.id);
 
     const movieTrailer = useSelector((store) => store?.movies?.movieTrailer);
-    console.log(movieTrailer);
     const recommendedMovies = useSelector((store) => store?.movies?.recommendedMovies);
 
     if (!movieTrailer) return <ErrorPage />
