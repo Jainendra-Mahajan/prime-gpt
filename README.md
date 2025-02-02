@@ -28,6 +28,7 @@ Prime-GPT is a dynamic video streaming platform where users can watch their favo
 - **GPT Search**: A powerful search bar that allows users to search for movies based on mood or genre, e.g., "top horror funny bollywood movies." Integrated with Chat GPT API.
 - **Debounced Search**: Efficient API calls are made using debouncing to improve search performance.
 - **Tailwind CSS**: Designed for a responsive, modern, and visually appealing UI.
+- **Shimmer UI**: Shimmer cards to show dummy cards loading on the screen for better UX.
 - **Multilingual Support**: The search page supports multiple languages including English, Hindi, and Marathi.
 - **API Integration**: Movie data is fetched from TMDB to provide up-to-date movie information.
 - **Responsiveness**: The platform is fully responsive for both desktop and mobile devices.
