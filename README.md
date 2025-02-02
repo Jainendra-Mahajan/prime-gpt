@@ -3,6 +3,7 @@
 An innovative video streaming platform to watch your favorite movie trailers with a GPT-powered recommendation system.
 
 Project Link - https://prime-gpt-89dc3.web.app
+
 Note - Enable Cors proxy plugin before accessing this webpage
 
 # Table of Contents
