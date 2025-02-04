@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import lang from '../utils/languageConstants';
 import openai from '../utils/openAI';
-import { API_OPTIONS, SEARCH_SUGGESTION_API } from '../utils/constants';
+import { API_OPTIONS, SEARCH_SUGGESTION_API_1, SEARCH_SUGGESTION_API_2 } from '../utils/constants';
 import { addGptMovieResult } from '../utils/gptSlice';
 import GPTShimmer from './GPTShimmer';
 import { cachedSuggestions } from '../utils/movieSuggestionSlice';
@@ -77,11 +77,12 @@ const GptSearchBar = () => {
     }, [searchQuery])
 
     const getSearchSuggestions = async () => {
-        const data = await fetch(SEARCH_SUGGESTION_API + searchQuery);
+
+        const data = await fetch(SEARCH_SUGGESTION_API_1 + searchQuery + SEARCH_SUGGESTION_API_2)
         const json = await data.json();
 
         setSuggestions(json[1])
-        //cached in the list to aviod API Calls
+        // cached in the list to aviod API Calls
         dispatch(cachedSuggestions({
             [searchQuery]: json[1]
         }
@@ -118,7 +119,7 @@ const GptSearchBar = () => {
 
                         {showSuggestion && <div className='z-10 bg-gray-500 w-[15.2rem] md:w-[32rem] ml-1 md:ml-3 text-white rounded-lg'>
                             <ul>
-                                {suggestions.map(s =>
+                                {suggestions != null && suggestions.map(s =>
                                     <li key={s} className='cursor-default flex items-center py-2 md:py-1 md:pl-2 hover:bg-gray-400 rounded-lg text-sm md:text-base' onClick={() => handleSuggestionSearch(s)}>
                                         <svg className="mx-2 w-4 h-4 md:w-5 md:h-5 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                                             <path stroke="currentColor" strokeLinecap="round" strokeWidth="2" d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z" />

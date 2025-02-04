@@ -1,17 +1,17 @@
 const lang = {
     en: {
         search: "Search",
-        placeHolder: "What would you like to watch Today ?"
+        placeHolder: "Try Searching Great Indian Funny Horror Movies..."
     },
 
     hindi: {
         search: "खोज",
-        placeHolder: "आज आप क्या देखना चाहेंगे?"
+        placeHolder: "महान भारतीय मजेदार डरावनी फिल्में खोजने का प्रयास करें..."
     },
 
     marathi: {
         search: "शोधा",
-        placeHolder: "तुम्हाला आज काय बघायला आवडेल?"
+        placeHolder: "उत्तम भारतीय मजेदार हॉरर चित्रपट शोधण्याचा प्रयत्न करा..."
     }
 }
 
